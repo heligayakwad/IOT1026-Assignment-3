@@ -12,7 +12,7 @@
 </p>
 
 # IOT1026-Assignment-3
-Write a description of the project here and don't forget to update the badges.  
+The Pack class, which provides a container with restrictions for keeping inventory items, is implemented in C# as part of the project. The Pack class enables for the addition and deletion of inventory items based on restrictions on maximum count, volume, and weight. It also offers ways to figure out how much each item weighs and how much space they take up in the bag. The abstract InventoryItem class represents a common inventory item with a name property.  
 
 [Assignment Instructions](docs/instructions.md)  
 [How to start coding](docs/how-to-use.md)  
