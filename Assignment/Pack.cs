@@ -59,10 +59,11 @@ public class Pack
             return true;
         }
         return false;
-
     }
 
-    // Implement this class
+    // Implement this *class* -> should be method
+    // This is a method and not a class 
+    //(I think the original comment was meant for the InventoryItem class)
     public override string ToString()
     {
         throw new NotImplementedException();
