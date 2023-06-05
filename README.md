@@ -7,7 +7,7 @@
 	<br/>
     <a href="https://codecov.io/gh/GwGibson/IOT1026-Assignment-3" > 
     <img src="https://codecov.io/gh/GwGibson/IOT1026-Assignment-3/branch/main/graph/badge.svg?token=JS0857X5JD"/> 
-	<img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">	
+	<img title="MIT License" alt="license" src="[https://img.shields.io/badge/license-MIT-informational?style=flat-square](https://github.com/GwGibson/IOT1026-Assignment-3/actions)">	
     </a>
 </p>
 
