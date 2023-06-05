@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class Pack
 {
-    private List<InventoryItem> items;
-    private int maxCount;
-    private int maxVolume;
-    private int maxWeight;
+  private List<InventoryItem> items;  // List to store the inventory items in the pack
+    private int maxCount;               // Maximum number of items allowed in the pack
+    private int maxVolume;              // Maximum volume allowed in the pack
+    private int maxWeight;              // Maximum weight allowed in the pack
 
     public Pack(int maxCount, int maxVolume, int maxWeight)
     {
@@ -14,9 +14,9 @@ public class Pack
         this.maxVolume = maxVolume;
         this.maxWeight = maxWeight;
 
-        items = new List<InventoryItem>();
+        items = new List<InventoryItem>(); // Initialize the list of items
     }
-
+// Adds an inventory item to the pack if it satisfies the constraints
     public bool Add(InventoryItem item)
     {
         if (items.Count < maxCount && GetTotalVolume() + item.Volume <= maxVolume && GetTotalWeight() + item.Weight <= maxWeight)
@@ -29,7 +29,7 @@ public class Pack
             return false;
         }
     }
-
+// Removes an inventory item from the pack
     public void Remove(InventoryItem item)
     {
         items.Remove(item);
@@ -46,7 +46,7 @@ public class Pack
 
         return result;
     }
-
+// Calculates the total volume of all items in the pack
     private float GetTotalVolume()
     {
         float totalVolume = 0f;
@@ -71,12 +71,13 @@ public class Pack
          return totalWeight;
      }
 }
-
+// Abstract base class representing an inventory item
 public abstract class InventoryItem
 {
-    public string Name { get; set; }
-    public float Weight { get; set; }
-    public float Volume { get; set; }
+    public string Name { get; set; } // Name of the inventory item
+    public float Weight { get; set; } // Weight of the inventory item in kg
+    public float Volume { get; set; } // Volume of the inventory item in liters
+
 
     public InventoryItem(string name, float weight, float volume)
     {
@@ -85,7 +86,7 @@ public abstract class InventoryItem
         Volume = volume;
     }
 }
-
+// Concrete classes representing specific inventory items
 public class Arrow : InventoryItem
 {
     public Arrow() : base("Arrow", 0.1f, 0.05f) {}
