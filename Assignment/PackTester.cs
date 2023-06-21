@@ -26,35 +26,34 @@ namespace Assignment
                 Console.WriteLine("5 - Food");
                 Console.WriteLine("6 - Sword");
                 Console.WriteLine("7 - Gather your pack and venture forth");
+                Console.WriteLine("8 - Detailed information about the backpack");
 
                 try
                 {
                     if (int.TryParse(Console.ReadLine(), out int choice))
                     {
-                        // Create the corresponding inventory item based on the user's choice
-                        InventoryItem newItem = choice switch
+                        if (choice == 8)
                         {
-                            1 => new Arrow(),
-                            2 => new Bow(),
-                            3 => new Rope(),
-                            4 => new Water(),
-                            5 => new Food(),
-                            6 => new Sword(),
-                            _ => null // Invalid choice, set newItem to null
-                        };
+                            pack.Info(); // Display detailed information about the backpack
+                        }
+                        else if (choice >= 1 && choice <= 7)
+                        {
+                            InventoryItem newItem = choice switch
+                            {
+                                1 => new Arrow(),
+                                2 => new Bow(),
+                                3 => new Rope(),
+                                4 => new Water(),
+                                5 => new Food(),
+                                6 => new Sword(),
+                                _ => throw new InvalidOperationException("Invalid choice")
+                            };
 
-                        if (newItem != null)
-                        {
                             if (!pack.Add(newItem))
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("Could not fit this item into the pack.");
                             }
-                        }
-                        else if (choice == 7)
-                        {
-                            Console.WriteLine("Venturing Forth!");
-                            addMoreItems = false;
                         }
                         else
                         {
