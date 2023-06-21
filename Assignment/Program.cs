@@ -15,6 +15,23 @@ namespace Assignment
             const float PackMaxWeight = 30;
             Pack pack = new(PackMaxItems, PackMaxVolume, PackMaxWeight);
             PackTester.AddEquipment(pack);
+
+            /*
+            List<InventoryItem> items = new List<InventoryItem>();
+
+            items.Add(new Sword());
+            items.Add(new Rope());
+            items.Add(new Water());
+            items.Add(new Food());
+            items.Add(new Bow());
+            items.Add(new Arrow());
+
+            foreach (var item in items)
+            {
+                // Massive switch statement if we don't use inheritance/polymorphism
+                System.Console.WriteLine(item.Display());
+            }
+            */
         }
     }
 }
